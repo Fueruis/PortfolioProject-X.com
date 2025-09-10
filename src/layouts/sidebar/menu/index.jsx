@@ -1,16 +1,18 @@
 import { NavLink } from "react-router-dom";
 import classNames from "classnames";
 import { mainMenu } from "../../../utils/consts.jsx";
+import ShowMore from "./showmore/index.jsx";
+import NewPost from "./newpost/index.jsx";
 
 export default function Menu() {
   return (
     <nav>
       {mainMenu.map((menu, index) => (
-        <NavLink to={menu.path} className="py-3 block group">
+        <NavLink to={menu.path} className="flex group">
           {({ isActive }) => (
             <div
               className={classNames(
-                "py-1 pl-3 rounded-full inline-flex items-center gap-5 group-hover:bg-[#eff3f41a] transition-colors",
+                "pl-3 py-4 pr-6 rounded-full inline-flex items-center gap-5 group-hover:bg-[#eff3f41a] transition-colors",
                 {
                   "font-bold": isActive,
                 }
@@ -26,11 +28,13 @@ export default function Menu() {
                 {isActive && menu.icon.active}
               </div>
 
-              <div className="pr-4 text-xl">{menu.title}</div>
+              <div className="text-xl">{menu.title}</div>
             </div>
           )}
         </NavLink>
       ))}
+      <ShowMore />
+      <NewPost />
     </nav>
   );
 }
