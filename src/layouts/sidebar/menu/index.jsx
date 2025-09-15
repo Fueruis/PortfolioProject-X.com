@@ -3,7 +3,6 @@ import classNames from "classnames";
 import { mainMenu } from "../../../utils/consts.jsx";
 import ShowMore from "./showmore/index.jsx";
 import NewPost from "./newpost/index.jsx";
-import ProfileButton from "../../../components/profilebutton/index.jsx";
 
 export default function Menu() {
   return (
@@ -36,7 +35,6 @@ export default function Menu() {
       ))}
       <ShowMore />
       <NewPost />
-      <ProfileButton className="mt-4" />
     </nav>
   );
 }
